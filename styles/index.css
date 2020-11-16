@@ -1,0 +1,94 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    margin: 0;
+}
+
+body {
+    position: relative;
+}
+
+#cells {
+    position: relative;
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 100%;
+    z-index: 4;
+}
+
+.bubyrka {
+    position: absolute;
+    left: calc(50% - 1.8vh);
+    transform: translate(-50%, 0);
+    top:5%;
+    height: 7%;
+}
+
+.top
+{
+    z-index: 3;
+    position: absolute;
+    left: calc(50%);
+    transform: translate(-50%, 0);
+    top:3%;
+    height: 6%;
+    cursor: pointer;
+}
+.lamp {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top:7%;
+    height: 18%;
+}
+#myCanvas{
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height:85%;
+    top:5%;
+}
+.girl{
+    position: absolute;
+    left: calc(50% - 34vh);
+    top:65%;
+    height: 27%;
+    display: none;
+}
+.hat{
+    position: absolute;
+    left: calc(50% + 2vh);
+    top:72%;
+    height: 15%;
+    transform: rotate(180deg);
+    z-index:1;
+    display: none;
+}
+.pozhiloy{
+    position: absolute;
+    left: calc(50% + 6vh);
+    bottom:18%;
+    height: 10%;
+    display: none;
+}
+.dove{
+    position: absolute;
+    left: calc(50% + 7vh);
+    bottom:18%;
+    height: 10%;
+    display: none;
+}
+#block{
+    position: absolute;
+    left: calc(50% + 2vh);
+    top:72%;
+    height: 15%;
+    transform: rotate(180deg);
+    z-index:3;
+    width: 20vh;
+    cursor: pointer;
+    display: none;
+}
