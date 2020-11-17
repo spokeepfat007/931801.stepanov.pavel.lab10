@@ -85,11 +85,11 @@
             let timePassed = Date.now() - start;
             bibka.style.top = 7 - timePassed / 50 + '%';
             if (timePassed >= 100) clearInterval(timer);
-
         }, 20);
     })
     let b = 0;
     topper.addEventListener('click', function () {
+        console.log(b);
         if (b === 0) {
             vkl();
             document.getElementsByClassName("dove")[0].style.display = "block";
@@ -105,8 +105,8 @@
             document.getElementsByClassName("pozhiloy")[0].style.display = "none";
             document.getElementsByClassName("hat")[0].style.display = "none";
             document.getElementById("block").style.display = "none";
-            dove.style.bottom = 18+"%";
-            glad.style.bottom = 18+"%";
+            dove.style.bottom = 18 + "%";
+            glad.style.bottom = 18 + "%";
             b = 0;
         }
     })
@@ -115,13 +115,13 @@
         let start = Date.now();
         let timer = setInterval(function () {
             let timePassed = Date.now() - start;
-            context.clearRect(0,0,500,400);
+            context.clearRect(0, 0, 500, 400);
             context.beginPath();
             context.moveTo(250, -20);
             context.lineTo(60, 400);
             context.lineTo(440, 400);
-            context.strokeStyle = 'rgba(' + 217 + ',' + 208 + ',' + 87 + ', ' + timePassed/4000 + ')';
-            context.fillStyle = 'rgba(' + 217 + ',' + 208 + ',' + 87 + ', ' + timePassed/4000 + ')';
+            context.strokeStyle = 'rgba(' + 217 + ',' + 208 + ',' + 87 + ', ' + timePassed / 4000 + ')';
+            context.fillStyle = 'rgba(' + 217 + ',' + 208 + ',' + 87 + ', ' + timePassed / 4000 + ')';
             context.closePath();
             context.fill();
             context.stroke();
@@ -134,18 +134,24 @@
         let start = Date.now();
         let timer = setInterval(function () {
             let timePassed = Date.now() - start;
-
+            context.clearRect(0, 0, 500, 400);
             context.beginPath();
             context.moveTo(250, -20);
             context.lineTo(60, 400);
             context.lineTo(440, 400);
-            context.strokeStyle = 'rgba(' + 217 + ',' + 208 + ',' + 87 + ', ' + 0.5-timePassed/4000 + ')';
-            context.fillStyle = 'rgba(' + 217 + ',' + 208 + ',' + 87 + ', ' + 0.5-timePassed/4000 + ')';
+            let bob = 0.5 - timePassed / 4000;
+            context.strokeStyle = 'rgba(' + 217 + ',' + 208 + ',' + 87 + ', ' + bob + ')';
+            context.fillStyle = 'rgba(' + 217 + ',' + 208 + ',' + 87 + ', ' + bob + ')';
+            console.log(0.5 - timePassed / 4000);
             context.closePath();
             context.fill();
             context.stroke();
-            context.clearRect(0,0,500,400);
-            if (timePassed >= 2000) clearInterval(timer);
+
+            if (timePassed >= 2000) {
+                clearInterval(timer);
+                context.clearRect(0, 0, 500, 400);
+            }
+            ;
         }, 0);
     }
 
